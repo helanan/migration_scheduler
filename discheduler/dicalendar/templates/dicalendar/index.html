@@ -1,9 +1,22 @@
 <h1>Schedule A Migration</h1>
 {% if latest_migration_list %}
+<h2>Migrations Needed Today:</h2>
 <ul>
     {% for migration in latest_migration_list %}
     <li><a href="{% url 'dicalendar:detail' migration.id %}">{{ migration.migration_text }}</a></li>
     {% endfor %}
+</ul>
+<h2>Migrations Needed Tomorrow:</h2>
+<ul>
+    <!-- {% for migration in latest_migration_list %}
+    <li><a href="{% url 'dicalendar:detail' migration.id %}">{{ migration.migration_text }}</a></li>
+    {% endfor %} -->
+</ul>
+<h2>Recently Completed Migrations:</h2>
+<ul>
+    <!-- {% for migration in latest_migration_list %}
+    <li><a href="{% url 'dicalendar:detail' migration.id %}">{{ migration.migration_text }}</a></li>
+    {% endfor %} -->
 </ul>
 {% else %}
 <p>No migrations are available.</p>
