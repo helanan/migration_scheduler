@@ -1,0 +1,10 @@
+<h1>Schedule A Migration</h1>
+{% if latest_migration_list %}
+<ul>
+    {% for migration in latest_migration_list %}
+    <li><a href="{% url 'dicalendar:detail' migration.id %}">{{ migration.migration_text }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No migrations are available.</p>
+{% endif %}
